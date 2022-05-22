@@ -1,0 +1,101 @@
+
+.wrapper{
+    width: 100%;
+    height: var(--default-layout-header-height,60px);
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+    --search-border-radius: 92px;
+    --icon-color:#a7a7ab;
+    --search-height:46px;
+    --search-width-btn:52px;
+}
+
+.inner{
+    height: 100%;
+    width: var(--default-layout-width,1150px);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    display: block;
+    cursor: pointer;
+}
+
+.wp{
+    position: relative;
+    width: 361px;
+    height: var(--search-height);
+}
+
+.search{
+    background-color: #f1f1f2;
+    width: 361px;
+    height: var(--search-height);
+    border-radius: var(--search-border-radius);
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+    &:focus-within{
+        border: 1px solid rgb(173, 173, 173);
+    }
+
+    input{
+        background-color: transparent;
+        flex: 1;
+        padding-left: 18px;
+        font-size: 1.6rem;
+        caret-color: var(--primary-color );
+        color: var(--text-color);
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn{
+        color: rgb(92, 92, 92);
+    }
+
+    .loading,
+    .clear{
+       position: absolute;
+       right: calc(var(--search-width-btn) + 14px);
+       top: 50%;
+       transform: translateY(-50%);
+       color: #a7a7ab;
+    }
+    
+    .sparate-line{
+        height: 60%;
+        width: 0.5px;
+        background-color: #dadadc;
+        margin-right: 1px;
+    }
+    
+    .search-btn{
+        color: var(--icon-color);
+        padding: 11px 10px;
+        font-size: 1.8rem;
+        border-bottom-right-radius: var(--search-border-radius);
+        border-top-right-radius: var(--search-border-radius);
+        width: var(--search-width-btn);
+        cursor: pointer;
+
+        &:hover{
+            background-color: rgb(225, 225, 227);
+        }
+    }
+    
+}
+
+.search .search-result{
+    width: 362px;
+}
+
+.search-title{
+    font-size: 1.4rem;
+    color: #595959;
+    text-transform: capitalize;
+    padding: 0 16px;
+}
+
+
